@@ -1,0 +1,33 @@
+.container > main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.container > main > .box {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: center;
+  gap: 10px;
+  padding: 20px 0px;
+}
+
+.container > main > .box > h1 {
+  font-size: 2em;
+  color: #4e4e4e;
+}
+
+.container > main > .box > div {
+  font-size: 1.2em;
+  letter-spacing: 1px;
+}
+
+.container > main > .box:not(:last-child) {
+  border-bottom: 0.1em solid #adadad;
+}
+
+.container > main > a {
+  font-size: 1.5em;
+}

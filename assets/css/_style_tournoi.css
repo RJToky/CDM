@@ -1,0 +1,80 @@
+.container {
+  height: auto;
+}
+.groupe {
+  width: 10em;
+  text-align: center;
+  padding: 5px;
+  background-color: #7e0b42;
+  border-radius: 5px;
+  color: white;
+}
+
+.container > main {
+  display: flex;
+  width: 100%;
+  height: 700px;
+  justify-content: center;
+  align-items: center;
+}
+
+.container > main > div {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.container > main > div > div {
+  display: flex;
+  flex-direction: column;
+  gap: 45px;
+  transform: translateY(3px);
+}
+
+.container > main > div.sisiny {
+  width: 30%;
+  display: flex;
+  justify-content: space-around;
+}
+
+.container > main > div:nth-child(1) > .quart {
+  gap: 112px;
+  transform: translateY(7px);
+}
+
+.container > main > div:nth-child(3) > .quart {
+  gap: 116px;
+  transform: translate(3px, 6px);
+}
+
+.container > main > div:nth-child(1) {
+  transform: translateX(23px);
+}
+
+.container > main > div:nth-child(3) {
+  transform: translateX(-23px);
+}
+
+.container > main > div:nth-child(1) > .demi {
+  transform: translate(-75px, 1px);
+  gap: 247px;
+}
+
+.container > main > div:nth-child(3) > .demi {
+  transform: translate(79px, -1px);
+  gap: 247px;
+}
+
+.container > main > div.apvony {
+  width: 10%;
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.container a {
+  font-size: 1.5em;
+  text-align: center;
+}

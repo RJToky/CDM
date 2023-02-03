@@ -1,0 +1,15 @@
+.container > main {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.container > main > .box {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 20px;
+}
+
+.container > main > .box > h1 {
+  color: #4e4e4e;
+}

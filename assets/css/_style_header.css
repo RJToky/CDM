@@ -1,0 +1,224 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style-type: none;
+  text-decoration: none;
+}
+
+:root {
+  /* --blue: #0093e9; */
+  /* --blue: #56042c; */
+  --blue: #7e0b42;
+}
+
+@font-face {
+  font-family: "Made L";
+  src: url("../font/MADEOkineSansPERSONALUSE-Light.otf");
+}
+
+@font-face {
+  font-family: "Poppins-Light";
+  src: url("../font/Poppins-Light.ttf");
+}
+
+body {
+  font-family: "Poppins-Light";
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.container > header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  background-color: var(--blue);
+  padding: 0.8em 2em;
+}
+
+.container > header > .logo {
+  font-size: 2em;
+  font-weight: bold;
+  color: white;
+}
+
+.container > header > nav {
+  display: flex;
+  overflow: hidden;
+}
+
+.container > header > nav > ul {
+  display: flex;
+  gap: 1.8rem;
+}
+
+.container > header > nav > ul > a > li {
+  color: white;
+  font-size: 1.1rem;
+  transition-duration: 0.3s;
+}
+
+.container > header > nav > ul > a {
+  display: flex;
+  flex-direction: column;
+}
+
+.container > header > nav > ul > a > span {
+  position: relative;
+  height: 1px;
+  top: -2px;
+  background-color: white;
+  transition-duration: 0.5s;
+  transform: scale(0);
+}
+
+.container > header > nav > ul > a:hover > span {
+  transform: scale(1);
+}
+
+.container > header > nav > ul > a:hover > li {
+  transform: translateY(-5px);
+}
+
+.container > header > nav > ul > a.active > li {
+  transform: translateY(-5px);
+}
+
+.container > header > nav > ul > a.active > span {
+  transform: scale(1);
+}
+
+.container > header > nav > .icon-bars,
+.container > header > nav > .background {
+  display: none;
+}
+
+@media screen and (max-width: 790px) {
+  .container > header > nav > .background {
+    display: block;
+    position: fixed;
+    top: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.123);
+    backdrop-filter: blur(0.5px);
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    transition: transform 0.5s ease-in;
+    transform: scale(0);
+  }
+
+  .container > header > nav.active > .background {
+    transform: scale(40);
+  }
+
+  .container > header > nav > ul {
+    position: fixed;
+    z-index: 2;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+    top: 0;
+    right: 0;
+    flex-direction: column;
+  }
+
+  .container > header > nav.active > ul {
+    display: flex;
+  }
+
+  .container > header > nav > ul > a > li {
+    font-size: 1.6em;
+    font-weight: bold;
+    color: var(--blue);
+  }
+
+  .container > header > nav > ul > a:not(.active) > span {
+    display: none;
+  }
+
+  .container > header > nav.active > ul > a {
+    transform-origin: bottom;
+    transform: scaleY(1);
+    animation: anim 0.5s ease-out;
+  }
+
+  @keyframes anim {
+    0%,
+    50% {
+      transform: scaleY(0);
+    }
+    100% {
+      transform: scaleY(1);
+    }
+  }
+
+  .container > header > nav > ul > a > span {
+    background-color: var(--blue);
+  }
+
+  .container > header > nav > .icon-bars {
+    z-index: 2;
+    display: flex;
+    position: relative;
+    transition: 0.5s;
+    padding: 20px 0px;
+  }
+
+  .container > header > nav > .icon-bars > span {
+    position: relative;
+    width: 1.5rem;
+    height: 2.5px;
+    background-color: white;
+    transition: 0.5s;
+  }
+
+  .container > header > nav > .icon-bars > span::before {
+    content: "";
+    position: absolute;
+    top: -8px;
+    width: 1.5rem;
+    height: 2.5px;
+    background-color: white;
+    transition: 0.5s;
+  }
+
+  .container > header > nav > .icon-bars > span::after {
+    content: "";
+    position: absolute;
+    top: 8px;
+    width: 1.5rem;
+    height: 2.5px;
+    background-color: white;
+    transition: 0.5s;
+  }
+
+  .container > header > nav.active > .icon-bars {
+    transition: 0.5s;
+  }
+
+  .container > header > nav.active > .icon-bars > span {
+    transition: 0.5s;
+    transform: rotateZ(-45deg);
+  }
+
+  .container > header > nav.active > .icon-bars > span::before {
+    transition: 0.5s;
+    top: 0;
+    transform: rotateZ(90deg);
+  }
+
+  .container > header > nav.active > .icon-bars > span::after {
+    transition: 0.5s;
+    top: 0;
+  }
+}
